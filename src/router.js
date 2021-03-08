@@ -4,7 +4,7 @@ import Secret from "./views/Secret.vue";
 import Login from "./views/Login.vue";
 import NotFound from "./views/NotFound.vue";
 
-import { isAuthenticated } from "./helpers/userAuth.js";
+import { isAuthenticated } from "./helpers/useAuth.js";
 
 const routes = [
   { path: "/", component: Home },

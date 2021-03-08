@@ -34,12 +34,12 @@
 </template>
 
 <script setup>
-import { isAuthenticated } from "../helpers/userAuth.js";
+import { isAuthenticated, signOut } from "../helpers/useAuth.js";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
-const logout = () => {
-  isAuthenticated.value = false;
+const logout = async () => {
+  await signOut();
   router.push("/");
 };
 </script>

@@ -10,7 +10,9 @@
         >
         <input
           id="username"
+          v-model="email"
           type="text"
+          placeholder="email"
           class="flex items-center h-12 px-4 mt-2 rounded focus:outline-none focus:ring-2 text-coolGray-900"
         />
         <label for="password" class="self-start mt-3 text-xs font-semibold"
@@ -19,6 +21,7 @@
         <input
           id="password"
           type="password"
+          v-model="password"
           class="flex items-center h-12 px-4 mt-2 rounded focus:outline-none focus:ring-2 text-coolGray-900"
         />
         <button
@@ -34,12 +37,19 @@
 </template>
 
 <script setup>
-import { isAuthenticated } from "../helpers/userAuth";
+import { ref } from "vue";
+import { signIn } from "../helpers/useAuth";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
-const login = () => {
-  isAuthenticated.value = true;
-  router.push("/");
+const login = async () => {
+  try {
+    await signIn(email.value, password.value);
+    router.push("/");
+  } catch (error) {
+    console.log(error);
+  }
 };
+const email = ref("");
+const password = ref("");
 </script>
