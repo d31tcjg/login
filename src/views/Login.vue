@@ -1,9 +1,9 @@
 <template>
-  <section class="bg-coolGray-100 text-coolGray-800 rounded">
-    <div class="container flex items-center justify-center text-center">
+  <section class="text-coolGray-800 rounded">
+    <div class="flex items-center justify-center text-center">
       <form
         @submit.prevent
-        class="flex flex-col w-full max-w-lg p-12 rounded shadow-lg text-coolGray-800 ng-untouched ng-pristine ng-valid"
+        class="flex flex-col w-full mt-12 max-w-lg p-12 rounded shadow-lg bg-coolGray-100 text-coolGray-800 ng-untouched ng-pristine ng-valid"
       >
         <label for="username" class="self-start text-xs font-semibold"
           >Username or Email</label
