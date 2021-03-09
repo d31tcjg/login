@@ -8,6 +8,13 @@
         <router-link to="/" class="btn btn-ghost btn-sm rounded-btn">
           Home
         </router-link>
+        <router-link
+          v-if="!isAuthenticated"
+          to="/SignUp"
+          class="btn btn-ghost btn-sm rounded-btn"
+        >
+          Sign Up
+        </router-link>
 
         <router-link
           v-if="!isAuthenticated"
