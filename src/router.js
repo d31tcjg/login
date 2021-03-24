@@ -1,11 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
+
 import Home from "./views/Home.vue";
 import Secret from "./views/Secret.vue";
 import Login from "./views/Login.vue";
-import NotFound from "./views/NotFound.vue";
 import SignUp from "./views/SignUp.vue";
+import NotFound from "./views/NotFound.vue";
 
-import { isAuthenticated } from "./helpers/useAuth.js";
+import { isAuthenticated } from "./helpers/useAuth";
 
 const routes = [
   { path: "/", component: Home },
@@ -18,8 +19,8 @@ const routes = [
     },
   },
   { path: "/login", component: Login },
+  { path: "/signup", component: SignUp },
   { path: "/:pathMatch(.*)*", name: "NotFound", component: NotFound },
-  { path: "/SignUp", component: SignUp },
 ];
 
 export const router = createRouter({
